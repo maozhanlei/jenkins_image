@@ -22,11 +22,8 @@ RUN jenkins-plugin-cli --plugins \
     "docker-workflow:latest" \
     "pipeline-stage-view:latest"
 
-# 拷贝自定义的 init.groovy.d 脚本（初始化配置）
-COPY init.groovy.d/ /usr/share/jenkins/ref/init.groovy.d/
-
 # 暴露 Jenkins 默认端口
-EXPOSE 8081
+EXPOSE 8080
 EXPOSE 50000
 
 # 设置 Jenkins 主目录（官方默认）
