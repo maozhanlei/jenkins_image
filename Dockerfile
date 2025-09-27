@@ -4,6 +4,11 @@ FROM jenkins/jenkins:lts
 # 切换到 root 用户以安装额外软件
 USER root
 
+# 创建目录并设置权限
+RUN mkdir -p /var/jenkins_home && \
+    chown -R jenkins:jenkins /var/jenkins_home && \
+    chmod -R 755 /var/jenkins_home
+
 # 安装必要工具（可选）
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
