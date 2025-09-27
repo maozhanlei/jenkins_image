@@ -31,5 +31,3 @@ EXPOSE 50000
 
 # 设置 Jenkins 主目录（官方默认）
 ENV JENKINS_HOME /var/jenkins_home
-
-# 默认会执行官方 entrypoint
