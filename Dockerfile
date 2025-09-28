@@ -6,7 +6,7 @@ USER root
 
 # 创建目录并设置权限
 RUN mkdir -p /var/jenkins_home && \
-    chown -R jenkins:jenkins /var/jenkins_home && \
+    chown -R 1000:1000 /var/jenkins_home && \
     chmod -R 755 /var/jenkins_home
 
 # 安装必要工具（可选）
