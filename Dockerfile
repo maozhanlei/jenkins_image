@@ -44,9 +44,9 @@ ENV JAVA_HOME_17 /opt/jdk-17
 ENV MAVEN_HOME /opt/maven
 ENV PATH $MAVEN_HOME/bin:$JAVA_HOME_17/bin:$PATH
 
-# 6. 将 Jenkins 用户添加到 docker 组（需与宿主机 docker 组 GID 匹配）
+# 6. 创建 docker 组并添加 Jenkins 用户（兼容宿主机 docker 组 GID）
 ARG DOCKER_GID=999
-RUN groupmod -g ${DOCKER_GID} docker && \
+RUN groupadd -g ${DOCKER_GID} docker && \
     usermod -aG docker jenkins
 
 # 7. 创建目录并设置权限
