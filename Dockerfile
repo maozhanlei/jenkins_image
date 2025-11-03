@@ -36,9 +36,9 @@ RUN mkdir -p /opt/java && \
 # 设置 JDK 17 路径
 RUN ln -sf /opt/java/openjdk /opt/java/jdk17
 
-# 安装 Maven
+# 安装 Maven - 使用国内镜像
 RUN cd /opt && \
-    wget -q https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz && \
+    wget -q https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz && \
     tar -xzf apache-maven-3.9.6-bin.tar.gz && \
     mv apache-maven-3.9.6 maven && \
     rm apache-maven-3.9.6-bin.tar.gz
